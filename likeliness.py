@@ -1,6 +1,14 @@
 __author__ = 'francesco'
 
+import os
 
+def thumbn()
+for filename in os.listdir( os.getcwd() ):
+    ##DOES THIS WORK FOR ALL TYPES OF IMGS???
+    a = sm.imread( filename )    #import image as array
+    a = a[:,:,1]    #consider on one colour layer
+    a = sm.imresize(a, (c,c))   #resize image
+#return
 
 def likeliness( a, b, c):
 
