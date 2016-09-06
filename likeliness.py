@@ -8,11 +8,15 @@ for filename in os.listdir( os.getcwd() ):
     a = sm.imread( filename )    #import image as array
     a = a[:,:,1]    #consider on one colour layer
     a = sm.imresize(a, (c,c))   #resize image
-#return
+    sm.imsave( filename, a)
 
 #WHEN SEARCHING FOR DUPLICATES IT IS CONVENIENT TO DELETE SPOTTED ELEMENTS, this can be tricky while looping
 
-def likeliness( a, b, c):
+
+for filename in os.listdir( os.getcwd() ):
+
+
+def likeliness( a, b):
 
 #IMPORT and RESIZE IMG A
 a = sm.imread(a)    #import image as array
