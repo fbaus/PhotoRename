@@ -10,6 +10,8 @@ for filename in os.listdir( os.getcwd() ):
     a = sm.imresize(a, (c,c))   #resize image
 #return
 
+#WHEN SEARCHING FOR DUPLICATES IT IS CONVENIENT TO DELETE SPOTTED ELEMENTS, this can be tricky while looping
+
 def likeliness( a, b, c):
 
 #IMPORT and RESIZE IMG A
