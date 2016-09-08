@@ -3,18 +3,17 @@ __author__ = 'francesco'
 import os
 
 def thumbn()
+l = {}
 for filename in os.listdir( os.getcwd() ):
     ##DOES THIS WORK FOR ALL TYPES OF IMGS???
     a = sm.imread( filename )    #import image as array
     a = a[:,:,1]    #consider on one colour layer
     a = sm.imresize(a, (c,c))   #resize image
-    #sm.imsave( filename, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES, how to change names?
-
+    name, extension = os.path.splitext( filename )
+    sm.imsave( name+_THU+extension, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES
+    l[ filename ] = 'n' 
 #WHEN SEARCHING FOR DUPLICATES IT IS CONVENIENT TO DELETE SPOTTED ELEMENTS, this can be tricky while looping
 
-l = {}
-for filename in os.listdir( os.getcwd() ):
-    l[ filename ] = 'n'
     
 
 
