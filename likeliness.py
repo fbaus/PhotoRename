@@ -1,6 +1,8 @@
 __author__ = 'francesco'
 
 import os
+import scipy.misc as sm
+import numpy as np
 
 def thumbn()
 l = {}
@@ -10,14 +12,16 @@ for filename in os.listdir( os.getcwd() ):
     a = a[:,:,1]    #consider on one colour layer
     a = sm.imresize(a, (c,c))   #resize image
     name, extension = os.path.splitext( filename )
-    sm.imsave( name+_TMB+extension, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES
+    sm.imsave( name+"_TMB"+extension, a) #SAVE THUMBNAILS IMAGE SHOULD NOT OVERWRITE IMAGES
+    np.save(filename, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES
     l[ filename ] = 'n' 
 #WHEN SEARCHING FOR DUPLICATES IT IS CONVENIENT TO DELETE SPOTTED ELEMENTS, this can be tricky while looping
 
 for filename in os.listdir( os.getcwd() ): #RUN on DICTIONARY LIST not all files!
     if 'TMB' not in filename:
         if l[filename]==n
-        
+
+
         #COMPARE TMBs
         #if EQUAL
 
