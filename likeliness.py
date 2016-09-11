@@ -13,13 +13,13 @@ for filename in os.listdir( os.getcwd() ):
     a = sm.imresize(a, (c,c))   #resize image
     name, extension = os.path.splitext( filename )
     sm.imsave( name+"_TMB"+extension, a) #SAVE THUMBNAILS IMAGE SHOULD NOT OVERWRITE IMAGES
-    np.save(filename, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES
+    np.save(name, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES
     l[ filename ] = 'n' 
 #WHEN SEARCHING FOR DUPLICATES IT IS CONVENIENT TO DELETE SPOTTED ELEMENTS, this can be tricky while looping
 
 for filename in os.listdir( os.getcwd() ): #RUN on DICTIONARY LIST not all files!
-    if 'TMB' not in filename:
-        if l[filename]==n
+    if filename.endswith(".npy") & l[filename]==n:
+        
 
 
         #COMPARE TMBs
