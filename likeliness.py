@@ -14,12 +14,15 @@ for filename in os.listdir( os.getcwd() ):
     name, extension = os.path.splitext( filename )
     sm.imsave( name+"_TMB"+extension, a) #SAVE THUMBNAILS IMAGE SHOULD NOT OVERWRITE IMAGES
     np.save(name, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES
-    l[ filename ] = 'n' 
+    l[ name ] = 'n' 
 #WHEN SEARCHING FOR DUPLICATES IT IS CONVENIENT TO DELETE SPOTTED ELEMENTS, this can be tricky while looping
 
+
+for i in l.keys():
+    for i in 
 for filename in os.listdir( os.getcwd() ): #RUN on DICTIONARY LIST not all files!
     if filename.endswith(".npy") & l[filename]==n:
-        
+    for    
 
 
         #COMPARE TMBs
