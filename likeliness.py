@@ -19,12 +19,16 @@ for filename in os.listdir( os.getcwd() ):
 
 
 for i in l.keys():
-    if l =n
-    for j in l.keys():
-        if i!=j:
-            #compare i and j
-            if #compare = match:
-                l[ j ] = 'y' 
+    if l[ i ] == 'n':
+        for j in l.keys():
+            if i!=j & l[j]=='n':
+                #compare i and j
+                if #compare = match:
+                    l[ i ] = 'y'
+                    l[ j ] = 'y'
+
+
+
 
 for filename in os.listdir( os.getcwd() ): #RUN on DICTIONARY LIST not all files!
     if filename.endswith(".npy") & l[filename]==n:
