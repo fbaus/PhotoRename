@@ -15,17 +15,26 @@ for filename in os.listdir( os.getcwd() ):
     sm.imsave( name+"_TMB"+extension, a) #SAVE THUMBNAILS IMAGE SHOULD NOT OVERWRITE IMAGES
     np.save(name, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES
     l[ name ] = 'n' 
+    
+    
 #WHEN SEARCHING FOR DUPLICATES IT IS CONVENIENT TO DELETE SPOTTED ELEMENTS, this can be tricky while looping
-
-
+d=[0] #list of duplicates IT WILL BE A LIST OF LISTS [[],[],[]] WHERE EACH SUBLIST CONTAINS DUPLICATES GROUPS
+b=0 #counter for how many i have duplicates
 for i in l.keys():
-    if l[ i ] == 'n':
+    if l[ i ] == 'n': #a picture can compare only in one duplicates group
+        c=0 #counter for how many duplicates for i
         for j in l.keys():
             if i!=j & l[j]=='n':
-                #compare i and j
+                #compare i and j DEVELOP METHOD
                 if #compare = match:
-                    l[ i ] = 'y'
                     l[ j ] = 'y'
+                    if c=0
+                        l[ i ] = 'y'
+                        d[b]=[i,j]
+                    else
+                        d[b].append[j]
+                    c=c+1
+        b=b+1
 
 
 
