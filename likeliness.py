@@ -34,7 +34,7 @@ for i in l.keys():
                     else
                         d[b].append[j]
                     c=c+1
-        b=b+1
+                    b=b+1
 
 
 
