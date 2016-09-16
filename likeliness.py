@@ -37,7 +37,7 @@ for i in l.keys():
                     b=b+1
 
 
-
+#ADD TKINTER DISPLAY of ELEMENT of d LIST of LISTS
 
 for filename in os.listdir( os.getcwd() ): #RUN on DICTIONARY LIST not all files!
     if filename.endswith(".npy") & l[filename]==n:
