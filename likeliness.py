@@ -4,14 +4,13 @@ import os
 import scipy.misc as sm
 import numpy as np
 
-def thumbn()
+def thumbn(c)    #CREATES SQUARE THUMBNAIL COPIES (size c-by-c) of the IMAGES
 l = {}
-for filename in os.listdir( os.getcwd() ):
-    ##DOES THIS WORK FOR ALL TYPES OF IMGS???
-    a = sm.imread( filename )    #import image as array
-    a = a[:,:,1]    #consider on one colour layer
-    a = sm.imresize(a, (c,c))   #resize image
-    name, extension = os.path.splitext( filename )
+for filename in os.listdir( os.getcwd() ):              #for all files into folder
+    a = sm.imread( filename )                           ###import image as array <<DOES IT WORK THE SAME FOR DIFFERENT FORMATS?
+    a = a[:,:,1]                                        ###consider ony one colour layer <<DOES IT WORK THE SAME FOR DIFFERENT FORMATS?
+    a = sm.imresize(a, (c,c))                           #resize image
+    name, extension = os.path.splitext( filename )      #
     sm.imsave( name+"_TMB"+extension, a) #SAVE THUMBNAILS IMAGE SHOULD NOT OVERWRITE IMAGES
     np.save(name, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES
     l[ name ] = 'n' 
