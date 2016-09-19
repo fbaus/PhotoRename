@@ -10,23 +10,22 @@ for filename in os.listdir( os.getcwd() ):              #for all files into fold
     a = sm.imread( filename )                           ###import image as array <<DOES IT WORK THE SAME FOR DIFFERENT FORMATS?
     a = a[:,:,1]                                        ###consider ony one colour layer <<DOES IT WORK THE SAME FOR DIFFERENT FORMATS?
     a = sm.imresize(a, (c,c))                           #resize image
-    name, extension = os.path.splitext( filename )      #
-    sm.imsave( name+"_TMB"+extension, a) #SAVE THUMBNAILS IMAGE SHOULD NOT OVERWRITE IMAGES
-    np.save(name, a) #THUMBNAILS SHOULD NOT OVERWRITE IMAGES
-    l[ name ] = 'n' 
+    name, extension = os.path.splitext( filename )      #extract name and file extension
+    np.save(name, a)                                    #save thumbnail as np array as a temporary file
+    l[ name ] = 'n'                                     #add the name to the blacklist but as non-duplicate
     
-    
-#WHEN SEARCHING FOR DUPLICATES IT IS CONVENIENT TO DELETE SPOTTED ELEMENTS, this can be tricky while looping
-d=[0] #list of duplicates IT WILL BE A LIST OF LISTS [[],[],[]] WHERE EACH SUBLIST CONTAINS DUPLICATES GROUPS
-b=0 #counter for how many i have duplicates
-for i in l.keys():
-    if l[ i ] == 'n': #a picture can compare only in one duplicates group
-        c=0 #counter for how many duplicates for i
-        for j in l.keys():
-            if i!=j & l[j]=='n':
+
+d=[0]                                                   #list of duplicated groups
+#IT WILL BE A LIST OF LISTS [[.,.],[.,.,.],[.,.]] WHERE EACH SUBLIST CONTAINS GROUPS OF DUPLICATES
+b=0                                                     #counter for how many i have duplicates i.e. how many groups in the list
+for i in l.keys():                                      #loop on every file in the folder
+    if l[ i ] == 'n':                                   #a picture can compare only in one duplicates group
+        c=0                                             #counter for how many duplicates for i i.e. how many pics in one group
+        for j in l.keys():                              #loop on every file in the folder
+            if i!=j & l[j]=='n':                        #if i and j are different
                 #compare i and j DEVELOP METHOD
-                if #compare = match:
-                    l[ j ] = 'y'
+                if #compare = match:                    
+                    l[ j ] = 'y'                        #
                     if c=0
                         l[ i ] = 'y'
                         d[b]=[i,j]
