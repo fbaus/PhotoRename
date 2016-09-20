@@ -3,6 +3,7 @@ __author__ = 'francesco'
 import os
 import scipy.misc as sm
 import numpy as np
+import tkinter
 
 def thumbn(c)    #CREATES SQUARE THUMBNAIL COPIES (size c-by-c) of the IMAGES
 l = {}
