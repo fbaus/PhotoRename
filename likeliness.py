@@ -75,3 +75,8 @@ for i in range(0,z):
 
 if (r/z<t): M=True
 else: M=False
+    
+
+    
+if __name__ == '__main__':
+    main()
