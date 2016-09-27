@@ -24,16 +24,16 @@ for i in l.keys():                                      #loop on every file in t
         c=0                                             #counter for how many duplicates for i i.e. how many pics in one group
         for j in l.keys():                              #loop on every file in the folder
             if i!=j & l[j]=='n':                        #if i and j are different
-                #compare i and j DEVELOP METHOD
-                if #compare = match:                    
-                    l[ j ] = 'y'                        #
-                    if c=0
-                        l[ i ] = 'y'
-                        d[b]=[i,j]
-                    else
-                        d[b].append[j]
-                    c=c+1
-                    b=b+1
+                #compare i and j DEVELOP METHOD TO COMPARE THUMBNAILS
+                if #compare = match above threshold:                    
+                    l[ j ] = 'y'                        #mark picture j as duplicate
+                    if c=0                              #if j is the first duplicate of i
+                        l[ i ] = 'y'                    #mark picture i as duplicate
+                        d[b]=[i,j]                      #create a duplicate group in the list
+                    else                                    
+                        d[b].append[j]                  #if i had other duplicates before just add j to the group
+                    c=c+1                               #increment the number of duplicates for i
+                    b=b+1                               #increment the number of i that have duplicates (i.e. number of groups)
 
 
 #ADD TKINTER DISPLAY of ELEMENT of d LIST of LISTS
