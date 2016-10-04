@@ -36,7 +36,8 @@ for i in l.keys():                                      #loop on every file in t
                     b=b+1                               #increment the number of i that have duplicates (i.e. number of groups)
 
 
-#ADD TKINTER DISPLAY of ELEMENT of d LIST of LISTS
+#ADD TKINTER to DISPLAY ELEMENT of the GROUPS of d LIST of LISTS to TICK the REAL DUPLICATES. 
+#THE ORIGINAL IS USUALLY THE ONE WITH BEST RESOLUTION
 
 for filename in os.listdir( os.getcwd() ): #RUN on DICTIONARY LIST not all files!
     if filename.endswith(".npy") & l[filename]==n:
