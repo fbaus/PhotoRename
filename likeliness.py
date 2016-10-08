@@ -39,14 +39,6 @@ for i in l.keys():                                      #loop on every file in t
 #ADD TKINTER to DISPLAY ELEMENT of the GROUPS of d LIST of LISTS to TICK the REAL DUPLICATES. 
 #THE ORIGINAL IS USUALLY THE ONE WITH BEST RESOLUTION
 
-for filename in os.listdir( os.getcwd() ): #RUN on DICTIONARY LIST not all files!
-    if filename.endswith(".npy") & l[filename]==n:
-    for    
-
-
-        #COMPARE TMBs
-        #if EQUAL
-
 
 
 def likeliness( a, b):
@@ -56,10 +48,7 @@ a = sm.imread(a)    #import image as array
 a = a[:,:,1]    #consider on one colour layer
 a = sm.imresize(a, (c,c))   #resize image
 
-#IMPORT and RESIZE IMG B
-b = sm.imread(b)    #import image as array
-b = b[:,:,1]    #consider on one colour layer
-b = sm.imresize(b, (c,c))   #resize image
+
 
 c = abs(a - b)
 
