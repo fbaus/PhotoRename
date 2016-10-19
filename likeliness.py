@@ -6,8 +6,6 @@ import numpy as np
 import tkinter
 
 def main():#<<<CREATE STRUCTURE of the PROGRAM
-
-def thumbn(c)                                           #CREATES SQUARE THUMBNAIL COPIES (size c-by-c) of the IMAGES
 l = {}
 for filename in os.listdir( os.getcwd() ):              #for all files into folder
     a = sm.imread( filename )                           ###import image as array <<DOES IT WORK THE SAME FOR DIFFERENT FORMATS?
@@ -16,7 +14,19 @@ for filename in os.listdir( os.getcwd() ):              #for all files into fold
     name, extension = os.path.splitext( filename )      #extract name and file extension
     np.save(name, a)                                    #save thumbnail as np array as a temporary file
     l[ name ] = 'n'                                     #add the name to the blacklist but as non-duplicate
-    
+ 
+
+
+def thumbn(img, c) #CREATES a SQUARE (edge "c") THUMBNAIL COPIES of IMAGE "img"
+a = sm.imread( img )                            #<<import image as array <<DOES IT WORK THE SAME FOR DIFFERENT FORMATS?
+a = a[:,:,1]                                    #<<consider ony one colour layer <<DOES IT WORK THE SAME FOR DIFFERENT FORMATS?
+a = sm.imresize(a, (c,c))                           #resize image
+name, extension = os.path.splitext( img )      #extract name and file extension
+np.save(name, a)                                    #save thumbnail as np array as a temporary file
+l[ name ] = 'n'                                     #add the name to the blacklist but as non-duplicate
+ 
+
+
 
 def compare() #<<<
 d=[0]                                                   #list of duplicated groups
