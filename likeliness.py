@@ -71,6 +71,26 @@ if (r/z<t): M=True
 else: M=False
     
 
+import tkinter as tk
+from PIL import ImageTk, Image
+
+#This creates the main window of an application
+window = tk.Tk()
+window.title("Join")
+window.geometry("300x300")
+window.configure(background='grey')
+path = "20160301_114130.jpg"
+#Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
+img = ImageTk.PhotoImage(Image.open(path))
+#The Label widget is a standard Tk
+# inter widget used to display a text or image on the screen.
+panel = tk.Label(window, image = img)
+#The Pack geometry manager packs widgets in rows or columns.
+panel.pack(side = "bottom", fill = "both", expand = "yes")
+#Start the GUI
+window.mainloop()
+    
+    
     
 if __name__ == '__main__': #a call to main() at the bottom so that each def is executed by the time we call main()
 #Script's variable __name__ has the value '__main__' only when the script is run, not imported.
